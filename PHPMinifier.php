@@ -7,8 +7,7 @@ class PHPMinifier {
 		$this->fileName = "";
 	}
 	
-	public function apply($fileLocation = "") {
-		
+	public function apply($fileLocation = "") {	
 		if($fileLocation == "")
 		{ return; }
 		else
@@ -112,7 +111,11 @@ class PHPMinifier {
 				{	$minifierString .= $character;	}
 				$counter++;
 			}
-			$outputFile = "minifier_".$this->fileName;
+			echo $minifierString;
+
+			//Please remove the below comment, if you want to store the compress minifier string in file (compress-minifier.txt), please check this file permission (read/write) also.
+			/*
+			$outputFile = "./compress-minifier.txt";
 			$fileObj = fopen($outputFile, "w+") or die("Unable to create/open file!");
 			fwrite($fileObj, $minifierString);
 			fclose($fileObj);
@@ -120,6 +123,7 @@ class PHPMinifier {
 			{	echo "Please find the minifier script in <b>[".$outputFile."]</b>";	}
 			else
 			{	echo "Couldn't able to produce the output";	}
+			*/
 		}
 	}
 }

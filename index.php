@@ -1,5 +1,5 @@
 <?php
 include_once("PHPMinifier.php");
 $obj = new PHPMinifier();
-$obj->apply("page.php");
+$obj->apply("PHPMinifier.php");
 ?>
